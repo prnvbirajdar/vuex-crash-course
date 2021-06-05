@@ -1,18 +1,8 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <Component1 />
+  <img alt="Vue logo" src="./assets/logo.png" />
 </template>
 
-<script>
-import Component1 from './components/Component1'
-
-export default {
-  name: 'App',
-  components: {
-    Component1
-  }
-}
-</script>
+<script></script>
 
 <style>
 #app {
