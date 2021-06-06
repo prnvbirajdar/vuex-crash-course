@@ -1,13 +1,15 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
   <Component1 />
+  <History />
 </template>
 
 <script>
 import Component1 from "./components/Component1.vue";
+import History from "./components/History.vue";
 
 export default {
-  components: { Component1 },
+  components: { Component1, History },
 };
 </script>
 
