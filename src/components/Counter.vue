@@ -3,37 +3,37 @@
   <button @click="decrement">-</button>
   <input type="number" v-model="inputVal" />
   <button @click="increment">+</button>
+  <div>
+    <button @click="addRandomNum">Add Random Number</button>
+  </div>
 </template>
 
 <script>
 import { ref, computed } from "vue";
-import {mapState} from 'vuex'
+import { useStore } from "vuex";
 
 export default {
   setup() {
-    // const counter = ref(0);
+    const store = useStore();
 
     const inputVal = ref(0);
 
-    // const storeCounter = computed(()=> {
-    //     return ...mapState('counter')})
+    const counter = computed(() => store.state.counter);
 
+    function increment() {
+      store.commit("INCREMENT_COUNTER", inputVal.value);
+    }
 
-    // const spacesLeft = computed(() => {
-    //   return capacity.value - attending.value.length;
-    // });
+    function decrement() {
+      store.commit("DECREMENT_COUNTER", inputVal.value);
+    }
 
-    const increment = () => counter.value++;
+    function addRandomNum() {
+      store.dispatch("addRandomNumber");
+    }
 
-    const decrement = () => counter.value--;
-
-    return {  inputVal, increment, decrement};
+    return { counter, inputVal, increment, decrement, addRandomNum };
   },
-computed:{
-    ...mapState('counter')
-}
-
-
 };
 </script>
 
