@@ -1,9 +1,13 @@
 <template>
   <h4>History</h4>
-  <span style="margin: 2rem" v-for="(num, index) in list" :key="index">{{
-    num
-  }}</span>
-  <div><input placeholder="Enter number" type="number" v-model="filteredNum"/></div>
+  <div>
+    <span style="margin: 2rem" v-for="(num, index) in list" :key="index">{{
+      num
+    }}</span>
+  </div>
+  <div>
+    <input placeholder="Enter number" type="number" v-model="filteredNum" />
+  </div>
 </template>
 
 <script>
@@ -14,7 +18,7 @@ export default {
   setup() {
     const store = useStore();
 
-    const filteredNum = ref(0)
+    const filteredNum = ref(0);
 
     const list = computed(() => store.state.numList);
 
@@ -22,4 +26,3 @@ export default {
   },
 };
 </script>
-

@@ -6,11 +6,19 @@ const store = createStore({
     counter: 0,
     numList: [0],
   },
-  getters: {
-    filterList(state) {
-      console.log(state.numList);
-    },
-  },
+//   getters: {
+//     filteredList: (state) => (num) => {
+//       state.numList.forEach((number, i) => {
+//         let indexArr = [];
+//         if (num === number) {
+//           indexArr.push(i);
+//         }
+
+//         console.log(indexArr);
+//         return indexArr;
+//       });
+//     },
+//   },
   mutations: {
     INCREMENT_COUNTER(state, payload) {
       state.counter = state.counter + Number(payload);
